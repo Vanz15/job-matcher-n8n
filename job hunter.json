@@ -1,0 +1,843 @@
+{
+  "name": "job hunter",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5fbe57f1-4fc9-4f99-92d1-e78d1c4a47a8",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6985350e-9d25-4a5d-890c-ca9e6a989bc3",
+              "name": "resume_text",
+              "value": "AIVANN HERALD MARTINEZ Quezon City, Philippines | +63 926 627 1281 | aivannpmartinez@gmail.com | linkedin.com/in/ahpmartinez | github.com/Vanz15 PROFESSIONAL SUMMARY Recent Computer Science graduate (Cum Laude, GWA 1.46, University of the Philippines Baguio) with hands-on experience building, evaluating, and testing AI and software systems, including an undergraduate thesis that found a 93%-accurate diagnostic model was reasoning from the wrong evidence in 96 of 100 \"correct\" predictions. Built a self-directed LLM-powered application from architecture decisions through deployment, and debugged multi-step AI agent behavior during an internship. Works iteratively with AI coding tools as part of a normal development process, while personally reasoning through and validating every design decision and every line shipped. Eager to join as a pioneer team member — learning new tools and practices, growing under mentorship, and contributing meaningfully to building AI that's not just accurate but trustworthy enough to matter in people's real decisions. EDUCATION Bachelor of Science in Computer Science 2022 – 2026 University of the Philippines Baguio | Cum Laude (GWA: 1.46 / GPA: 3.54) | Consistent Dean’s Lister | Outstanding Thesis Presenter SM Foundation, Inc. (SMFI) Academic Scholar 2022 – 2026 Thesis: Quantifying the Reliability of a Pneumonia-Diagnosing ResNet34 Model via GAX-based Interpretable Confidence Maps CORE TECHNICAL SKILLS LLM / AI Tooling: LangGraph, Groq API, Ollama (local LLM deployment), prompt design & evaluation, multi-model routing, AI-assisted coding (Claude Code, GitHub Copilot, Gemini Copilot) Machine Learning: scikit-learn (Logistic Regression, Random Forest), PyTorch/CNN training (ResNet34), model interpretability/XAI methods, NLP sentiment analysis Languages & Frameworks: Python, PHP/Laravel, Livewire, Reflex, Streamlit, SQL Practices: Git version control, automated feature testing, systematic verification before deployment RELEVANT PROFESSIONAL EXPERIENCE Artificial Intelligence Intern | Springer Capital, Remote May 2026 – Jun 2026 • Debugged and evaluated LangGraph-based AI agents, identifying failure points in multi-step reasoning and tool-calling flows • Built an employee sentiment analysis pipeline (NLP + machine learning) as a self-directed project during the internship — processed employee communication data to score sentiment, rank engagement, and flag flight-risk employees based on sustained negative-sentiment patterns over rolling 30-day windows • Translated raw model output into actionable insights (e.g., flagging employees showing 4+ negative messages within a 30-day window) and documented findings in a written report for non-technical stakeholders Quality Assurance (QA) Tester | UP Baguio – Office of Student Affairs, Baguio City Mar 2025 – Jun 2025 • Wrote and maintained automated feature tests (PHP/Laravel, Livewire components) for TAPSA, a role-based student-assistant duty and time-tracking system used by Assistants, Supervisors, and Admins • Covered core system flows end-to-end: authentication and registration, daily time-in/time-out logging, account approval workflows, office/unit management, and report generation (bar graphs, contribution pie charts) • Tested across all three user roles separately to catch permission and workflow issues specific to each (e.g., Supervisor approval of Assistant accounts, Admin-level office/unit editing) • Practiced structured, repeatable test-writing rather than one-off manual checks — a discipline that shaped how I verify AI systems now: test each component in isolation, then confirm the full flow works end-to-end RELEVANT PROJECTS Purch — LLM-Powered Chat-based Budget Tracker (Personal Project) • Directed the architecture of a chat-based budgeting assistant built with LangGraph — evaluating and deciding on a single-entry-point agent pipeline and a dual-model routing system on Groq, working iteratively with AI coding tools to arrive at and implement the structure, separating conversational and reasoning workloads to match each request to the right model • Built a two-stage routing optimization to cut unnecessary LLM calls and reduce response latency • Designed three distinct conversational tones (Neutral, Bestie, Sarcastic) myself to make the assistant feel more natural and localized for Filipino users • Reviewed and validated all AI-proposed code and design patterns before integrating them, debugging logic and verifying every change against real test cases before shipping NBA Game Outcome Predictor • Built an end-to-end ML pipeline that predicts NBA game winners and projected total points, using historical game data pulled via the NBA Stats API across five seasons • Engineered features from pre-game data only (recent win rates, shooting efficiency, turnovers, home/away splits, Elo-based team strength) to avoid data leakage • Trained and compared Logistic Regression and Random Forest models for winner prediction (~67% accuracy, ~0.72 ROC-AUC) and separate regression models for score projection • Built the explainability layer myself: instead of showing raw model coefficients, the app translates statistical advantages into plain-language basketball reasoning (e.g., recent form, shooting efficiency) and explains both sides of a matchup, not just the predicted winner • Deployed as a live Streamlit app Student Assistant Management Dashboard (Full-Stack Application) • Supported this Laravel/Livewire system as a QA tester (see Experience above) and presented the completed project to university stakeholders, walking them through system functionality and demonstrating that it met requirements ACADEMIC RESEARCH Undergraduate Thesis — Quantifying the Reliability of a Pneumonia-Diagnosing ResNet34 Model via GAX-Based Interpretable Confidence Maps • Built an Explainable AI (XAI) audit pipeline to test whether a medical image classifier was reasoning correctly, not just scoring well — designed as a pre-deployment safety check rather than a one-off accuracy report • Trained and evaluated eight variations of a ResNet34 CNN (ImageNet-pretrained backbone) on a curated 14,863-image chest X-ray dataset (RSNA Pneumonia Detection Challenge), reaching test accuracies up to 93.14% • Extended the GAX (Generative Augmentative Explanation) method into a quantitative audit tool: built an iterative optimization loop that generates attribution heatmaps showing exactly which pixels drive each prediction, then cross-referenced those heatmaps against true lung regions using a segmentation model • Designed a formal metric, the Cheating Score, to measure what proportion of a model's \"positive evidence\" falls outside the actual lung fields — i.e., how much of its confidence comes from clinically irrelevant background artifacts instead of real pathology • Core finding: across all eight model variants, accuracy and \"cheating\" rose together — the more statistically accurate a model got, the more it leaned on irrelevant background signals. At the standard safety threshold, 96 of 100 \"correctly classified\" pneumonia cases were found to be relying on shortcut learning rather than real biological evidence • Takeaway I carry into any model-facing role: a model can look production-ready on its scorecard and still be reasoning from the wrong evidence — evaluation has to check why a model is right, not just whether it's right CERTIFICATIONS LLM Engineering: Master AI, Large Language Models & Agents by Ed Donner (Udemy, Feb 2026) Python for Data Science (Udemy, Jan 2026) IBM SkillsBuild Data Fundamentals (IBM, Dec 2025)",
+              "type": "string"
+            },
+            {
+              "id": "ff6d9caf-cf6d-4357-bf26-ce4cbe036638",
+              "name": "resume_summary",
+              "value": "Aivann Herald Martinez — Recent CS graduate (Cum Laude, GWA 1.46, UP Baguio), targeting AI Engineer / Software Engineer roles. Skills: Python, LangGraph, Groq API, LLM prompt design & multi-model routing, Ollama, PyTorch/CNN, scikit-learn, model interpretability/XAI, NLP sentiment analysis, PHP/Laravel, Livewire, SQL, Git. Experience: AI Intern at Springer Capital (debugged LangGraph agents, built NLP sentiment-analysis pipeline); QA Tester at UP Baguio (automated Laravel/Livewire feature tests). Built Purch, an LLM-powered budget tracker (LangGraph, dual-model routing on Groq). Thesis: audited a 93%-accurate pneumonia-detection CNN using explainable AI, found it relied on wrong evidence in 96/100 cases — strong interpretability/model-evaluation background. Entry-level, 0-1 yr formal industry experience (internship + academic projects). Open to AI Engineering, ML Engineering, Software Engineering, QA/AI Testing roles. Based in Philippines, open to Metro Manila relocation.",
+              "type": "string"
+            },
+            {
+              "id": "9f0f2472-1492-49f0-bb6c-0c3b459428c7",
+              "name": "search_queries",
+              "value": "={{ [\"Junior AI Engineer\", \"Junior Software Engineer\", \"QA Engineer\", \"AI Testing\", \"Python\"] }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "8d6c902e-f869-4883-91a3-3295bac53319",
+      "name": "Resume Text"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/blackfalcondata~jobstreet-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"searchQuery\": \"Junior AI Engineer\",\n  \"location\": \"Metro Manila\",\n  \"maxResults\": 15\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        448,
+        0
+      ],
+      "id": "9cf80e13-562f-45ac-a2e6-3f3d2733fd20",
+      "name": "Fetch Jobs - Apify"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2ea1bc7b-4c6d-4525-ac06-b08656fe0461",
+              "name": "title",
+              "value": "=\t{{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "236f5fe5-d0a7-4b23-9dbe-6e721419ff6f",
+              "name": "company",
+              "value": "=\t{{ $json.company }}",
+              "type": "string"
+            },
+            {
+              "id": "10ad84ad-2e6b-44ba-af0b-b9942c7a26d7",
+              "name": "location",
+              "value": "={{ $json.location }}",
+              "type": "string"
+            },
+            {
+              "id": "d1707519-bb88-4d95-80fc-bc36c4601778",
+              "name": "url",
+              "value": "={{ $json.canonicalUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "56c93c02-e8f6-47d3-b95c-6089d6c0752b",
+              "name": "description",
+              "value": "={{ $json.description.substring(0, 800) }}",
+              "type": "string"
+            },
+            {
+              "id": "e01214a2-fa47-46e9-8c12-ec96b54e11a1",
+              "name": "employmentType",
+              "value": "={{ $json.employmentType }}",
+              "type": "string"
+            },
+            {
+              "id": "27bce4ba-687f-4c8f-8a92-91b48a363049",
+              "name": "index",
+              "value": "={{ $itemIndex }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        896,
+        0
+      ],
+      "id": "28f47a28-f695-4cb6-ae6b-068d2226ae5d",
+      "name": "Trim Job Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        672,
+        0
+      ],
+      "id": "067b503e-d5ed-4f3a-8120-0f22d180ab6e",
+      "name": "Wait",
+      "webhookId": "bb3f9fc2-6025-4ed8-8ac0-492532cc9f5e"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "jobs",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        -64
+      ],
+      "id": "2f3b1522-1611-4883-a1c9-3a1adaf41757",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.candidates[0].content.parts[0].text;\n\nlet parsed;\ntry {\n  parsed = JSON.parse(raw);\n} catch (e) {\n  let repaired = raw.trim();\n  if (!repaired.endsWith(']')) {\n    const lastCompleteObject = repaired.lastIndexOf('},');\n    if (lastCompleteObject !== -1) {\n      repaired = repaired.substring(0, lastCompleteObject + 1) + ']';\n    } else {\n      repaired = repaired + ']';\n    }\n  }\n  parsed = JSON.parse(repaired);\n}\n\nreturn parsed.map(item => ({\n  json: item\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2016,
+        -64
+      ],
+      "id": "4bbf522b-4e74-42f2-86e5-d1490008430c",
+      "name": "Parse Scores Array"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "advanced": true,
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "index",
+              "field2": "index"
+            }
+          ]
+        },
+        "joinMode": "keepEverything",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2240,
+        0
+      ],
+      "id": "5177e9c2-b39d-4ee3-a5e4-217c1e9c323c",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "7489dffa-5b84-4ee1-b8b8-dc10ed5eb211",
+              "leftValue": "={{ $json.fit_score }}",
+              "rightValue": 80,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2464,
+        0
+      ],
+      "id": "10380981-0ab3-4ce1-8ee8-9b9f1292c1cb",
+      "name": "Fit Score Gate"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ contents: [{ parts: [{ text: \"You are a job posting analyzer. Extract structured hiring signals from the job description. Output ONLY valid JSON, no markdown, no preamble.\\n\\nJOB TITLE: \" + $json.title + \"\\nCOMPANY: \" + $json.company + \"\\nDESCRIPTION:\\n\" + $json.description + \"\\n\\nExtract and respond with ONLY this JSON structure:\\n{\\\"required_skills\\\": [\\\"skill1\\\", \\\"skill2\\\"], \\\"ats_keywords\\\": [\\\"keyword1\\\", \\\"keyword2\\\"], \\\"seniority\\\": \\\"entry/mid/senior\\\", \\\"years_experience\\\": \\\"e.g. 2-4 years or Not specified\\\", \\\"nice_to_have\\\": [\\\"skill1\\\"], \\\"culture_signals\\\": [\\\"signal1\\\", \\\"signal2\\\"]}\" }] }], generationConfig: { temperature: 0.3 } }) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 5000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        2688,
+        -96
+      ],
+      "id": "7f2b5bf9-b335-4136-b05a-9293f60b1193",
+      "name": "Deep Analysis",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "bPATqbs7zFq1qXmJ",
+          "name": "Google API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const raw = $input.item.json.candidates[0].content.parts[0].text;\nconst analysis = JSON.parse(raw);\n\nreturn {\n  json: {\n    ...$('Fit Score Gate').item.json,\n    required_skills: analysis.required_skills,\n    ats_keywords: analysis.ats_keywords,\n    seniority: analysis.seniority,\n    years_experience: analysis.years_experience,\n    nice_to_have: analysis.nice_to_have,\n    culture_signals: analysis.culture_signals\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2912,
+        -96
+      ],
+      "id": "478ebd31-4e10-4b7e-b17f-283af5151b9e",
+      "name": "Parse Deep Analysis"
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        2688,
+        96
+      ],
+      "id": "9f7d6156-304e-47d9-9277-d26d48c425a2",
+      "name": "Format Skipped Jobs"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM",
+          "mode": "list",
+          "cachedResultName": "Job Matcher Results",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Matches",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Title": "={{ $json.title }}",
+            "Company": "={{ $json.company }}",
+            "Location": "={{ $json.location }}",
+            "URL": "={{ $json.url }}",
+            "Fit Score": "={{ $json.fit_score }}",
+            "Reasoning": "={{ $json.reasoning }}",
+            "Required Skills": "={{ $json.required_skills.join(', ') }}",
+            "ATS Keywords": "={{ $json.ats_keywords.join(', ') }}",
+            "Years Experience": "={{ $json.years_experience }}",
+            "Nice to Have": "={{ $json.nice_to_have.join(', ') }}",
+            "Culture SIgnals": "={{ $json.culture_signals.join(', ') }}",
+            "Seniority": "={{ $json.seniority }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fit Score",
+              "displayName": "Fit Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Reasoning",
+              "displayName": "Reasoning",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Required Skills",
+              "displayName": "Required Skills",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ATS Keywords",
+              "displayName": "ATS Keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Seniority",
+              "displayName": "Seniority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Years Experience",
+              "displayName": "Years Experience",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nice to Have",
+              "displayName": "Nice to Have",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Culture SIgnals",
+              "displayName": "Culture SIgnals",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3136,
+        -96
+      ],
+      "id": "cbae46fc-1e99-41a7-840c-f30db17f83df",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleApi": {
+          "id": "F6NftDSCDueqGGCm",
+          "name": "Google Sheet Service Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM",
+          "mode": "list",
+          "cachedResultName": "Job Matcher Results",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1031004379,
+          "mode": "list",
+          "cachedResultName": "Skipped",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM/edit#gid=1031004379"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Title": "={{ $json.title }}",
+            "Company": "={{ $json.company }}",
+            "URL": "={{ $json.url }}",
+            "Fit Score": "={{ $json.fit_score }}",
+            "Reasoning": "={{ $json.reasoning }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fit Score",
+              "displayName": "Fit Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reasoning",
+              "displayName": "Reasoning",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2912,
+        96
+      ],
+      "id": "e33a29bd-bbbd-4c70-94e2-d5d8b136b996",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleApi": {
+          "id": "F6NftDSCDueqGGCm",
+          "name": "Google Sheet Service Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "=application/json",
+        "body": "={{ JSON.stringify({ contents: [{ parts: [{ text: \"You are a job-fit scorer. Score each job 1-100 for skill/seniority/domain fit. Output ONLY a JSON array, no markdown, same order as input.\\n\\nRESUME:\\n\" + $('Resume Text').item.json.resume_summary + \"\\n\\nJOBS:\\n\" + JSON.stringify($json.jobs.map((j, i) => ({ index: i, title: j.title, company: j.company, description: j.description }))) + \"\\n\\nRespond with ONLY this JSON array structure:\\n[{\\\"index\\\": 0, \\\"fit_score\\\": <number 1-100>, \\\"reasoning\\\": \\\"<one sentence>\\\"}, ...]\" }] }], generationConfig: { temperature: 0.3 } }) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 5000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        1792,
+        -64
+      ],
+      "id": "d64d29d6-7003-42c8-a7bc-a748a93e22fa",
+      "name": "Score Fit",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "bPATqbs7zFq1qXmJ",
+          "name": "Google API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM",
+          "mode": "list",
+          "cachedResultName": "Job Matcher Results",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Matches",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rb8VMPpsq3NoTGgSLSSUCas319hID0gwlX7aFO_xAsM/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1120,
+        -64
+      ],
+      "id": "4ed4acf4-73e1-474b-8b6b-35c7087fffb8",
+      "name": "Get Existing URLs",
+      "credentials": {
+        "googleApi": {
+          "id": "F6NftDSCDueqGGCm",
+          "name": "Google Sheet Service Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const existingUrls = new Set(\n  $('Get Existing URLs').all().map(item => item.json.URL || item.json.url)\n);\n\nconst newJobs = $('Trim Job Fields').all();\n\nconst uniqueJobs = newJobs.filter(job => !existingUrls.has(job.json.url));\n\nreturn uniqueJobs;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1344,
+        -64
+      ],
+      "id": "ee34f8bf-70c4-405a-878f-06ca04291e52",
+      "name": "Dedupe Jobs"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Resume Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resume Text": {
+      "main": [
+        [
+          {
+            "node": "Fetch Jobs - Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Jobs - Apify": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trim Job Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Get Existing URLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Trim Job Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Score Fit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Scores Array": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Fit Score Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fit Score Gate": {
+      "main": [
+        [
+          {
+            "node": "Deep Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Skipped Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deep Analysis": {
+      "main": [
+        [
+          {
+            "node": "Parse Deep Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Deep Analysis": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Skipped Jobs": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score Fit": {
+      "main": [
+        [
+          {
+            "node": "Parse Scores Array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing URLs": {
+      "main": [
+        [
+          {
+            "node": "Dedupe Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dedupe Jobs": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "a759509f-06bd-4138-b4ed-092b99d857ea",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2dff748a01f94efcb6b8ac95f1bab3c41683bdd10e910cae1ad5b8e7d4f378ad"
+  },
+  "nodeGroups": [],
+  "id": "ZNziIur67lZ45m9U",
+  "tags": []
+}
